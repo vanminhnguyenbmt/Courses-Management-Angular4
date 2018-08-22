@@ -1,0 +1,10 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Angular 4",
+            "description": "For front end developer",
+            "fee": 10
+        }
+    ]
+}
