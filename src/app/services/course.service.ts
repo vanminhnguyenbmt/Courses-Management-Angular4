@@ -7,11 +7,27 @@ import { Course } from '../models/course.model';
 
 export class CourseService {
 
-  public API = 'http://localhost:3000/courses';
+    public API = 'http://localhost:3000/courses';
 
-  constructor(public http: HttpClient) { }
+    constructor(public http: HttpClient) { }
 
-  getAllCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>(this.API);
-  }
+    getAllCourses(): Observable<Course[]> {
+        return this.http.get<Course[]>(this.API);
+    }
+
+    getCourse(id: number): Observable<Course> {
+        return this.http.get<Course>(`${this.API}/${id}`);
+    }
+
+    addCourse(course: Course): Observable<Course> {
+        return this.http.post<Course>(this.API, course);
+    }
+
+    deleteCourse(id: number): Observable<Course> {
+        return this.http.delete<Course>(`${this.API}/${id}`);
+    }
+
+    updateCourse(course: Course) : Observable<Course> {
+        return this.http.put<Course>(`${this.API}/${course.id}`, course);
+    }
 }

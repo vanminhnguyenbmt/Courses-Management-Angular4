@@ -3,13 +3,17 @@
       <h3 class="panel-title">Course-Management</h3>
     </div>
     <div class="panel-body">
-      <table class="table table-bordered table-hover">
+      
+      <button type="button" class="btn btn-danger" [routerLink]="['/courses/add']">ADD COURSE</button>
+      
+      <table class="table table-bordered table-hover" [style.margin-top.px]="10">
         <thead>
           <tr>
             <th>#</th>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -17,10 +21,13 @@
             <td>{{ i + 1 }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.description }}</td>
-            <td>{{ item.fee > 0 ? (item.fee | currency : 'USD' : true) : 'FREE' }}</td>
+            <td>{{ item.fee > 0 ? (item.fee | currency : 'USD' : '$') : 'FREE' }}</td>
+            <td>         
+              <button type="button" class="btn btn-success" [routerLink]="['/courses', item.id, 'edit']">Edit</button>
+              <button type="button" class="btn btn-danger" [style.margin-left.px]="5" (click)="onDeleteCourse(item.id)">Delete</button>            
+            </td>
           </tr>
         </tbody>
       </table>
-      
     </div>
 </div>

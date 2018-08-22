@@ -1,10 +1,28 @@
 {
-    "courses": [
-        {
-            "id": 1,
-            "name": "Angular 4",
-            "description": "For front end developer",
-            "fee": 10
-        }
-    ]
+  "courses": [
+    {
+      "id": 1,
+      "name": "Angular 4",
+      "description": "For front end developer",
+      "fee": 10
+    },
+    {
+      "name": "ReactJS",
+      "description": "For Mobile & Frontend",
+      "fee": 25,
+      "id": 2
+    },
+    {
+      "name": "Javascript",
+      "description": "OOP",
+      "fee": 0,
+      "id": 3
+    },
+    {
+      "name": ".Net Core API",
+      "description": "Cross platform",
+      "fee": 33,
+      "id": 4
+    }
+  ]
 }
